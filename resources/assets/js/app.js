@@ -1,4 +1,3 @@
-
 /**
  * First we will load all of this project's JavaScript dependencies which
  * include Vue and Vue Resource. This gives a great starting point for
@@ -16,5 +15,5 @@ require('./bootstrap');
 Vue.component('example', require('./components/Example.vue'));
 
 const app = new Vue({
-    el: 'body'
+   el: 'body'
 });

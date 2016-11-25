@@ -1,9 +1,24 @@
-
 // Fonts
 @import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
-
 // Variables
 @import "variables";
-
 // Bootstrap
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+
+/**
+ * Scaffolding
+ */
+
+body{
+   font-family: 'Lato';
+}
+.fa-btn{
+   margin-right: 6px;
+}
+
+/**
+ * Helpers
+ */
+.marginleft20{ margin-left: 20px; }
+

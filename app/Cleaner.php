@@ -7,25 +7,35 @@ use Illuminate\Database\Eloquent\Model;
 class Cleaner extends Model
 {
     /**
-     * The database table used by the model.
-     *
-     * @var string
-     */
-    protected $table = 'cleaners';
-
-    /**
-    * The database primary key value.
-    *
-    * @var string
-    */
-    protected $primaryKey = 'id';
-
-    /**
      * Attributes that should be mass-assignable.
      *
      * @var array
      */
     protected $fillable = ['first_name', 'last_name', 'quality_score'];
 
-    
+    /**
+     * Belongs to many cities
+     */
+    public function cities()
+    {
+        return $this->belongsToMany(City::class);
+    }
+
+    /**
+     * Has many bookings
+     */
+    public function bookings()
+    {
+        return $this->hasMany(Booking::class);
+    }
+
+    /**
+     * Get full_name attribute
+     *
+     * @return string
+     */
+    public function getFullNameAttribute()
+    {
+        return $this->first_name . ' ' . $this->last_name;
+    }
 }
